@@ -4,10 +4,10 @@ namespace GameCore.Animal.Interfaces
 {
     public interface IAnimalFactory
     {
-        IAnimal CreateAnimal(string type);
-        void ReturnAnimal(IAnimal animal);
+        public IAnimal CreateAnimal(string type);
+        public void ReturnAnimal(IAnimal animal);
         
-        void RegisterAnimal(string type, Func<IAnimal> factoryMethod, Action<IAnimal> returnMethod);
-        IAnimal CreateRandomAnimal();
+        public void RegisterAnimal(string type, Func<IAnimal> factoryMethod, Action<IAnimal> returnMethod);
+        public IAnimal CreateRandomAnimal();
     }
 }

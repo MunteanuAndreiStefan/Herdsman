@@ -2,7 +2,7 @@
 {
     public interface IStaticCanvas
     {
-        void ActivateStaticCanvas();
-        void DeactivateStaticCanvas();
+        public void ActivateStaticCanvas();
+        public void DeactivateStaticCanvas();
     }
 }

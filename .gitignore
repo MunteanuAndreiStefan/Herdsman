@@ -70,3 +70,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Herdsman/Library/AnnotationManager
+Herdsman/Library/APIUpdater/ConfigurationCache/Microsoft.CSharp.dll.9690519A8C68FC631DAB720CE28BB6AD5A311769B8BF19E0A71F35AD85715910.apiupaterconfigs
+*.apiupaterconfigs
+Herdsman/Library/BurstCache/JIT/Objects/331af6fa6bd3961a8009676eb3e731a1.obj
+*.gbc
+*.obj

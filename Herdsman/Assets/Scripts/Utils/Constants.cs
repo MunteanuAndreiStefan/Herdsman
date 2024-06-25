@@ -12,5 +12,6 @@
         public const float DEFAULT_MAX_SPAWN_TIME = 5f;
         public const float DEFAULT_ANIMAL_PATROL_SPEED = 2f;
         public const int DEFAULT_PATROL_POINTS = 8;
+        public const float DEFAULT_SIZE_ANIMAL = 0.75f;
     }
 }

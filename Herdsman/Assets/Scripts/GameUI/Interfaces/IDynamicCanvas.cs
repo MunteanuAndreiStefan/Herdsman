@@ -2,7 +2,7 @@
 {
     public interface IDynamicCanvas
     {
-        void ActivateDynamicCanvas();
-        void DeactivateDynamicCanvas();
+        public void ActivateDynamicCanvas();
+        public void DeactivateDynamicCanvas();
     }
 }

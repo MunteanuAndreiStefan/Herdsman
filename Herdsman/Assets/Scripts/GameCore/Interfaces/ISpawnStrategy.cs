@@ -4,6 +4,6 @@ namespace GameCore.Spawn
 {
     public interface ISpawnStrategy
     {
-        Vector3 GetSpawnPosition();
+        public Vector3 GetSpawnPosition();
     }
 }

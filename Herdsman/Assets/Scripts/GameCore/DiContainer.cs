@@ -1,3 +1,4 @@
+using System.Linq;
 using GameCore.Animal;
 using GameCore.Animal.Interfaces;
 using GameCore.Player;
@@ -21,6 +22,8 @@ namespace GameCore
         public GameObject PlayerPrefab;
         [SerializeField] private GameObject _staticCanvas;
         [SerializeField] private GameObject _dynamicCanvas;
+        
+        IAnimalSpawner _animalSpawner;
 
         public override void Awake()
         {
@@ -57,9 +60,9 @@ namespace GameCore
 
             #endregion Register services
 
-            var animalSpawner = ServiceProvider.GetRequiredService<IAnimalSpawner>();
+            _animalSpawner = ServiceProvider.GetRequiredService<IAnimalSpawner>();
             var strategy = ServiceProvider.GetRequiredService<ISpawnStrategy>();
-            animalSpawner.SetSpawnStrategy(strategy);
+            _animalSpawner.SetSpawnStrategy(strategy);
         }
 
         private void Start()
@@ -69,7 +72,16 @@ namespace GameCore
             ServiceProvider.GetRequiredService<IUIManager>().StartGame();
         }
 
-        void OnDestroy() =>
+        private void Update()
+        {
+            foreach (var (material, animals) in _animalSpawner.GetActiveAnimals())
+            {
+                if (animals.Count <= 0) continue;
+                    Graphics.DrawMeshInstanced(animals.First().GetMesh(), 0, material,  animals.Select(a => a.GetCurrentMatrix()).ToList()); // Not optimal due selection and ToList allocation, could be optimized via adding all this in the object pool logic.
+            }
+        }
+
+        private void OnDestroy() =>
             ServiceProvider?.Dispose(); // Null coalescing operator can be used since is not a Component.
     }
 }

@@ -4,6 +4,6 @@ namespace GameCore.Animal.Interfaces
 {
     public interface IAnimalObserver
     {
-        void OnAnimalDisabled(Collider2D collider2d);
+        public void OnAnimalDisabled(Collider2D collider2d);
     }
 }

@@ -6,6 +6,6 @@ namespace GameInput.Interfaces
     {
         public Vector3 GetInputPosition();
         public bool IsInputActive();
-        bool GetMenuKey();
+        public bool GetMenuKey();
     }
 }

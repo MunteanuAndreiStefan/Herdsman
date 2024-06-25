@@ -2,7 +2,7 @@
 {
     public interface IGameState
     {
-        void StartGame();
-        void PauseGame();
+        public void StartGame();
+        public void PauseGame();
     }
 }

@@ -1,14 +1,17 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using GameCore.Spawn;
+using UnityEngine;
 
 namespace GameCore.Animal.Interfaces
 {
     public interface IAnimalSpawner
     {
-        void SetSpawnStrategy(ISpawnStrategy strategy);
-        void SpawnAnimal(string type);
-        void SpawnRandomAnimal();
-        IEnumerator SpawnRandomAnimalRoutine();
-        void DespawnAnimal(IAnimal animal);
+        public void SetSpawnStrategy(ISpawnStrategy strategy);
+        public void SpawnAnimal(string type);
+        public void SpawnRandomAnimal();
+        public IEnumerator SpawnRandomAnimalRoutine();
+        public void DespawnAnimal(IAnimal animal);
+        public Dictionary<Material, HashSet<IAnimal>> GetActiveAnimals();
     }
 }

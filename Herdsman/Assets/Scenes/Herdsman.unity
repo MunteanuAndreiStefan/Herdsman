@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d634673778efb745ae695c90c4e44b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RabbitPrefab: {fileID: 1916877676016705899, guid: 12c066c4dc6b1d14eb1a8e3706a4e5d7, type: 3}
-  SheepPrefab: {fileID: 2743816276289494766, guid: 254f693497d11b94c83b890a5c662231, type: 3}
+  RabbitPrefab: {fileID: 3416319223371300854, guid: 0fd631a523c604648997aa83f950da25, type: 3}
+  SheepPrefab: {fileID: 7088755436195227510, guid: 13f2c8b98f50226488ca1da1cf03a7f1, type: 3}
   PlayerPrefab: {fileID: 2788142149669904571, guid: c63463475c8460c49a43e2529e98009b, type: 3}
   _staticCanvas: {fileID: 861672342}
   _dynamicCanvas: {fileID: 217661304}

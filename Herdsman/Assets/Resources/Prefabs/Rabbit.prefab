@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6813055989035932995}
   - component: {fileID: 8393001974102521484}
   - component: {fileID: 1003018396206154196}
+  - component: {fileID: 4773955681217674854}
   m_Layer: 6
   m_Name: Rabbit
   m_TagString: Animal
@@ -221,3 +222,18 @@ NavMeshAgent:
   m_BaseOffset: 0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4773955681217674854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2488849756778485770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6f92e4434fd5047980c09f815dbc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuadMesh: {fileID: 0}
+  Pivot: {x: 0, y: 0, z: 0, w: 0}
+  NewUV: {x: 0, y: 0, z: 0, w: 0}

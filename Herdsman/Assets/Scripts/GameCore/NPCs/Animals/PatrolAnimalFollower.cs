@@ -43,13 +43,6 @@ namespace GameCore.Animal
                 }
             }
 
-            private void OnEnable()
-            {
-                if (_agent == null)
-                    _agent = GetComponent<NavMeshAgent>();
-                _agent.enabled = true;
-            }
-
             public override void SetTarget(Transform newTarget, IAnimalObserver observer)
             {
                 base.SetTarget(newTarget, observer);
@@ -64,7 +57,7 @@ namespace GameCore.Animal
                 }
                 else
                 {
-                    base.UpdateBehavior(); // Call the base class Update method for following behavior
+                    base.UpdateBehavior();
                 }
             }
 
@@ -77,6 +70,13 @@ namespace GameCore.Animal
                 var direction = patrolPoint - transform.position;
                 if (direction.magnitude <= 0.6f)
                     _currentPatrolIndex = (_currentPatrolIndex + 1) % PatrolPoints.Count;
+            }
+            
+            private void OnEnable()
+            {
+                if (_agent == null)
+                    _agent = GetComponent<NavMeshAgent>();
+                _agent.enabled = true;
             }
         }
     }

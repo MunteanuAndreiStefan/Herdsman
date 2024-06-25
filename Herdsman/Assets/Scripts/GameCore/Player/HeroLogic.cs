@@ -43,7 +43,7 @@ namespace GameCore.Player
                 var animal = _colliderResults[i].GetComponent<PatrolAnimalFollower>();
                 if (animal == null) continue;
 
-                animal.SetTarget(transform, this); //TODO reimplement and disable agent.
+                animal.SetTarget(transform, this);
                 _groupedAnimals.Add(_colliderResults[i], animal);
 
                 if (_groupedAnimals.Count >= _maxGroupSize) break;

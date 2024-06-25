@@ -18,15 +18,6 @@ namespace GameUI
             _staticMenu = _staticCanvas.GetComponent<StaticMenu>();
         }
 
-        private void Start()
-        {
-            if (_staticCanvas == null)
-                Debug.LogError("Static Canvas is not assigned in the inspector.", this);
-
-            if (_dynamicCanvas == null)
-                Debug.LogError("Dynamic Canvas is not assigned in the inspector.", this);
-        }
-
         public void StartGame()
         {
             ActivateStaticCanvas();
@@ -81,5 +72,14 @@ namespace GameUI
         }
 
         public void ExitGame() => Application.Quit();
+        
+        private void Start()
+        {
+            if (_staticCanvas == null)
+                Debug.LogError("Static Canvas is not assigned in the inspector.", this);
+
+            if (_dynamicCanvas == null)
+                Debug.LogError("Dynamic Canvas is not assigned in the inspector.", this);
+        }
     }
 }
