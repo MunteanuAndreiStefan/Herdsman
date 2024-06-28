@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace GameCore.Locations
 {
+    /// <summary>
+    /// Yard component that handles the score increase and animal processing.
+    /// </summary>
     public class Yard : MonoBehaviour
     {
         private IScoreManager _scoreManager;

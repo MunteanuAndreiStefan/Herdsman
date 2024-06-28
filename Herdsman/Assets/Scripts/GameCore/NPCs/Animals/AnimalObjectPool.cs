@@ -3,11 +3,19 @@ using UnityEngine;
 
 namespace GameCore.Animal
 {
+    /// <summary>
+    /// Generic object pool for animals
+    /// </summary>
     public class AnimalObjectPool<T> where T : MonoBehaviour, IAnimal
     {
         private readonly Queue<T> _pool;
         private readonly T _prefab;
 
+        /// <summary>
+        /// Constructor for the pool
+        /// </summary>
+        /// <param name="prefab">Prefab used on the pool</param>
+        /// <param name="initialCapacity">Initial capacity of the pool</param>
         public AnimalObjectPool(T prefab, int initialCapacity = 10)
         {
             _prefab = prefab;
@@ -21,6 +29,9 @@ namespace GameCore.Animal
             }
         }
 
+        /// <summary>
+        /// Get an object from the pool
+        /// </summary>
         public T Get()
         {
             if (_pool.Count > 0)
@@ -36,6 +47,9 @@ namespace GameCore.Animal
             }
         }
 
+        /// <summary>
+        /// Return an object to the pool
+        /// </summary>
         public void ReturnToPool(T obj)
         {
             obj.Deactivate();

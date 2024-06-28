@@ -169,6 +169,7 @@ MonoBehaviour:
   PlayerPrefab: {fileID: 2788142149669904571, guid: c63463475c8460c49a43e2529e98009b, type: 3}
   _staticCanvas: {fileID: 861672342}
   _dynamicCanvas: {fileID: 217661304}
+  _gameConfig: {fileID: 11400000, guid: bdc610ee37f83054b9c33d52ccde5038, type: 2}
 --- !u!114 &142621022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +264,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &217661308
 RectTransform:
@@ -889,7 +890,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.2
+  m_VoxelSize: 0.071666665
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: 68e3df91bd0112341b1971dc200b9979, type: 2}
@@ -1564,7 +1565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2321,7 +2322,7 @@ SceneRoots:
   - {fileID: 217661308}
   - {fileID: 861672346}
   - {fileID: 975157097}
-  - {fileID: 142621019}
   - {fileID: 1399731787}
   - {fileID: 328693589}
+  - {fileID: 142621019}
   - {fileID: 502373427}

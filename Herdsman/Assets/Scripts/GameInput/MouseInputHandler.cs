@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace GameInput
 {
+    /// <summary>
+    /// MouseInputHandler is the handles the mouse input for the game.
+    /// </summary>
     public class MouseInputHandler : AbstractInputHandler
     {
         public override Vector3 GetInputPosition() => CameraManager.GetCurrent.ScreenToWorldPoint(Input.mousePosition);

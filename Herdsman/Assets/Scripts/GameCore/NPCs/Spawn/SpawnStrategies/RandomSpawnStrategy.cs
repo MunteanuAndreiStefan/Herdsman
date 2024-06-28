@@ -3,6 +3,9 @@ using Utils;
 
 namespace GameCore.Spawn
 {
+    /// <summary>
+    /// Strategy for random spawn points.
+    /// </summary>
     public class RandomSpawnStrategy : ISpawnStrategy
     {
         public Vector3 GetSpawnPosition()

@@ -2,13 +2,15 @@ using GameInput.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using GameUI.Interfaces;
 using UnityEngine;
-using Utils;
 
 namespace GameCore.Player
 {
+    /// <summary>
+    /// Player movement component it ensures the player moves towards the input position.
+    /// </summary>
     public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField] private float _moveSpeed = Constants.DEFAULT_PLAYER_MOVE_SPEED;
+        [SerializeField] private float _moveSpeed;
         [SerializeField] private Rigidbody2D _rigidBody2d;
         private Vector2 _targetPosition;
         private bool _isMoving;
@@ -40,6 +42,8 @@ namespace GameCore.Player
                 _uiManager.PauseGame();
 
         }
+
+        private void Awake() => _moveSpeed = DiContainer.Instance.GameConfig.PlayerMoveSpeed;
 
         private void FixedUpdate()
         {

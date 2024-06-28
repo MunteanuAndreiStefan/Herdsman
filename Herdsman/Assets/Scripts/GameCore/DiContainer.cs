@@ -13,6 +13,9 @@ using Utils.Generics;
 
 namespace GameCore
 {
+    /// <summary>
+    /// DiContainer serves as a dependency injection (DI) container for managing and resolving dependencies within the game.
+    /// </summary>
     public class DiContainer : PersistentSingleton<DiContainer>
     {
         public ServiceProvider ServiceProvider { get; private set; }
@@ -22,15 +25,25 @@ namespace GameCore
         public GameObject PlayerPrefab;
         [SerializeField] private GameObject _staticCanvas;
         [SerializeField] private GameObject _dynamicCanvas;
-        
+        [SerializeField] private GameConfig _gameConfig;
         IAnimalSpawner _animalSpawner;
+
+        public GameConfig GameConfig
+        {
+            get
+            {
+                if(_gameConfig == null)
+                    _gameConfig = Resources.Load<GameConfig>("ScriptableObjects/GameConfig");
+                return _gameConfig;
+            }
+        }
 
         public override void Awake()
         {
             base.Awake();
             var serviceCollection = new ServiceCollection();
 
-            var rabbitPool = new AnimalObjectPool<Rabbit>(RabbitPrefab, 0); //Default without parent for performance reasons
+            var rabbitPool = new AnimalObjectPool<Rabbit>(RabbitPrefab, 0); //Default without parent for performance reasons, due dirty flag on hierarchy.
             var sheepPool = new AnimalObjectPool<Sheep>(SheepPrefab, 0);
 
             #region Register services

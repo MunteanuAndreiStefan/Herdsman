@@ -38,6 +38,6 @@ namespace GameUI
         }
 
         private void UpdateScoreUI(int newScore) =>
-            _scoreText.text = newScore.ToString(); // There is no need of adding "Score: " + newValue each time.
+            _scoreText.text = newScore.ToString(); // There is no need of adding "Score: " + newValue each time, this ensures non-alloc memory, better even than string interpolation or string builder, at the same time having 2 canvases ensure the canvas will not get marked as dirty each time the score changes.
     }
 }

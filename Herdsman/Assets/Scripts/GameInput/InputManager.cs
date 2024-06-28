@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace GameInput
 {
+    /// <summary>
+    /// InputManager, it's used like a proxy pattern, in order to manage the input for the game.
+    /// </summary>
     public class InputManager : IInputManager
     {
         private readonly AbstractInputHandler _abstractInputHandler;

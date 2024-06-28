@@ -3,6 +3,9 @@ using Utils.Generics;
 
 namespace GameCamera
 {
+    /// <summary>
+    /// Camera manager obtain current camera in the scene.
+    /// </summary>
     public class CameraManager : PersistentSingleton<CameraManager>
     {
         private const string MAIN_CAMERA_PATH = "MainCamera";

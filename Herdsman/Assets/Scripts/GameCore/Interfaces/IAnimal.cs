@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace GameCore.Animal
 {
+    /// <summary>
+    /// Animal interface
+    /// </summary>
     public interface IAnimal
     {
         public Mesh GetMesh();

@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 namespace GameUI
 {
+    /// <summary>
+    /// StaticMenu class, used to reference the UI elements.
+    /// </summary>
     public class StaticMenu : MonoBehaviour
     {
         [SerializeField] private Button _resumeButton;
@@ -13,6 +16,10 @@ namespace GameUI
         [SerializeField] private GameObject _menuPanel;
         private IUIManager _uiManager;
 
+        /// <summary>
+        /// Activates or deactivates the static menu.
+        /// </summary>
+        /// <param name="state">State to be set for the static menu.</param>
         public void SetMenuState(bool state) => _menuPanel.SetActive(state);
 
         private void Start()

@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace GameCore.Animal.Interfaces
 {
+    /// <summary>
+    /// AnimalSpawner interface
+    /// </summary>
     public interface IAnimalSpawner
     {
         public void SetSpawnStrategy(ISpawnStrategy strategy);

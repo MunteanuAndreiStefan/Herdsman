@@ -2,6 +2,9 @@
 
 namespace GameCore.Animal.Interfaces
 {
+    /// <summary>
+    /// AnimalFactory interface
+    /// </summary>
     public interface IAnimalFactory
     {
         public IAnimal CreateAnimal(string type);

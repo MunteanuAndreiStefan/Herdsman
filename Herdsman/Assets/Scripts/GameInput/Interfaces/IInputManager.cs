@@ -2,6 +2,9 @@
 
 namespace GameInput.Interfaces
 {
+    /// <summary>
+    /// InputManager interface
+    /// </summary>
     public interface IInputManager
     {
         public Vector3 GetInputPosition();

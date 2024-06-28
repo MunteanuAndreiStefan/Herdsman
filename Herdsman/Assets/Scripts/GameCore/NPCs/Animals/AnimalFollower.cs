@@ -1,28 +1,43 @@
 using GameCore.Animal.Interfaces;
 using UnityEngine;
-using Utils;
 
 namespace GameCore.Animal
 {
+    /// <summary>
+    /// Animal follower behavior for following a target.
+    /// </summary>
     [RequireComponent(typeof(Collider2D))]
     public class AnimalFollower : MonoBehaviour, IAnimalBehavior
     {
         public Transform Target;
-        public float FollowDistance = Constants.DEFAULT_FOLLOW_DISTANCE;
-        public float MoveSpeed = Constants.DEFAULT_ANIMAL_MOVE_SPEED;
+        public float FollowDistance;
+        public float MoveSpeed;
         private IAnimalObserver _observer;
         public Collider2D Collider2D { get; private set; }
 
-        protected virtual void Awake() => Collider2D = GetComponent<Collider2D>();
+        protected virtual void Awake()
+        {
+            Collider2D = GetComponent<Collider2D>();
+            FollowDistance = DiContainer.Instance.GameConfig.FollowDistance;
+            MoveSpeed = DiContainer.Instance.GameConfig.AnimalMoveSpeed;
+        }
 
         private void Update() => UpdateBehavior();
 
+        /// <summary>
+        /// Sets the target for the animal to follow.
+        /// </summary>
+        /// <param name="newTarget">Transform target</param>
+        /// <param name="observer">IAnimalObserver implementation to watch</param>
         public virtual void SetTarget(Transform newTarget, IAnimalObserver observer)
         {
             Target = newTarget;
             _observer = observer;
         }
 
+        /// <summary>
+        /// Behavior update for the animal, based on target.
+        /// </summary>
         public virtual void UpdateBehavior()
         {
             if (Target == null) return;

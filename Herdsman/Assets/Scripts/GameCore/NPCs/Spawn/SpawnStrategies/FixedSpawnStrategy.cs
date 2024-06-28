@@ -5,16 +5,22 @@ using Utils.Collections;
 
 namespace GameCore.Spawn
 {
+    /// <summary>
+    /// Strategy for fixed spawn points.
+    /// </summary>
     public class FixedSpawnStrategy : ISpawnStrategy
     {
         [SerializeField] private List<SpawnPoint> _spawnPoints = new List<SpawnPoint>();
 
+        /// <summary>
+        /// Generates a list randomly of positions after which it generates at those positions.
+        /// </summary>
         public FixedSpawnStrategy()
         {
-            foreach (var spawnPoint in _spawnPoints.ToList().Where(spawnPoint => spawnPoint == null)) // Done only once.
+            foreach (var spawnPoint in _spawnPoints.ToList().Where(spawnPoint => spawnPoint == null))
             {
                 _spawnPoints.Remove(spawnPoint);
-                Debug.LogError("one spawn point was null, it was removed");
+                Debug.LogError("One spawn point was null, it was removed");
             }
 
             if (_spawnPoints.Count == 0)
@@ -22,7 +28,7 @@ namespace GameCore.Spawn
         }
 
         public Vector3 GetSpawnPosition() =>
-            ListExtensions.GetRandomElement(_spawnPoints).Position; // This could be used to contain also rotation data.
+            ListExtensions.GetRandomElement(_spawnPoints).Position;
 
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Utils.Generics
 {
     /// <summary> 
-    /// Persistent generic singleton.
+    /// Persistent generic singleton for components.
     /// </summary>
     public class PersistentSingleton<T> : MonoBehaviour where T : Component
     {
