@@ -29,7 +29,17 @@ This project is an overengineered small 2D prototype of a herdsman. It showcases
 ### **Strategy:**
 
 - **Purpose**: Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
-- **Usage:** Could be used to define different movement [strategies](https://github.com/MunteanuAndreiStefan/Herdsman/blob/main/Herdsman/Assets/Scripts/GameCore/NPCs/Spawn/SpawnStrategies/RandomSpawnStrategy.cs) for animals (e.g., patrol behaviour, following behaviour), but I’ve only used it for spawn.
+- **Usage:** Could be used to define different [strategies](https://github.com/MunteanuAndreiStefan/Herdsman/blob/main/Herdsman/Assets/Scripts/GameCore/NPCs/Spawn/SpawnStrategies/RandomSpawnStrategy.cs) for animals (e.g., patrol behaviour, following behaviour), but I’ve only used it for spawn.
+
+### **Object pool:**
+
+- **Purpose**: Minimize object creation overhead, improve performance via not generating garbage for GC.
+- **Usage:** Used for [animal](https://github.com/MunteanuAndreiStefan/Herdsman/blob/main/Herdsman/Assets/Scripts/GameCore/NPCs/Animals/AnimalObjectPool.cs) reuse.
+
+### **Observer via UniRx:**
+
+- **Purpose**: Facilitate real-time data changes, reactive programming, and event-driven architectures.
+- **Usage:** Used for the [score update](https://github.com/MunteanuAndreiStefan/Herdsman/blob/main/Herdsman/Assets/Scripts/GameUI/UIScoreObserver.cs), on UI via a reactive property.
 
 ### **Best practices:**
 
